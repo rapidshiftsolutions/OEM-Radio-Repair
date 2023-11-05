@@ -5,11 +5,11 @@ import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
-    template: '%s - TaxPal',
-    default: 'TaxPal - Accounting made simple for small businesses',
+    template: '%s - OEM Radio Repair',
+    default: 'OEM Radio Repair',
   },
   description:
-    'Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited.',
+    'We make repairing your factory radio fast and easy using quality parts from trusted companies.',
 }
 
 const inter = Inter({

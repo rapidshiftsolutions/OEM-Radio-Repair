@@ -11,7 +11,7 @@ import logo from '../images/OEMRadioRepair/ORR.png'
 
 const navigation = [
   { name: 'About Us', href: '#about' },
-  { name: 'Supported Vehicles', href: '#' },
+  { name: 'Supported Vehicles', href: '#makes' },
   { name: 'For Dealerships', href: '#' },
 ]
 

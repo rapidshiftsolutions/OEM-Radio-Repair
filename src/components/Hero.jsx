@@ -22,7 +22,7 @@ export function Hero() {
       
       </h1>
       <p className="mx-auto mt-6 sm:mt-14 max-w-2xl text-lg tracking-tight text-slate-700">
-      We make repairing your factory radio fast and easy using quality parts from trusted companies. Contact us today for more info.
+      Let us repair your broken car radio touch screens and amps. Contact us today for more info.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="#contact">Contact Us</Button>

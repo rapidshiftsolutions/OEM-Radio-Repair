@@ -13,7 +13,7 @@ export default function Example() {
       <Image
         src={BG1}
         alt=""
-        className="opacity-30 absolute inset-0 -z-10 h-full w-full object-cover"
+        className="opacity-20 absolute inset-0 -z-10 h-full w-full object-cover"
       />
       </div>
       <div
@@ -30,10 +30,10 @@ export default function Example() {
       </div>
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Who Are We?</h2>
-        <p className="mt-6 text-lg leading-8 text-gray-300">
+        <p className="mt-6 text-md sm:text-lg leading-8 text-gray-300">
           An OEM Car Radio Repair Shop that specializes in repairing broken factory touch screens and OEM amps. We are located in Birmingham Alabama, but we serve customers all over the country.
         </p>
-        <p className="mt-6 text-lg leading-8 text-gray-300">
+        <p className="mt-6 text-md sm:text-lg leading-8 text-gray-300">
           Our family has been in the Automotive Audio business for decades and we noticed a gap in our local market. No-one provides quality OEM Radio repairs at a decent price. This is when OEM Radio Repair was born.
         </p>
       </div>

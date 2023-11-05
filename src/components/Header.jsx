@@ -10,7 +10,7 @@ import Image from 'next/image'
 import logo from '../images/OEMRadioRepair/ORR.png'
 
 const navigation = [
-  { name: 'About Us', href: '#' },
+  { name: 'About Us', href: '#about' },
   { name: 'Supported Vehicles', href: '#' },
   { name: 'For Dealerships', href: '#' },
 ]
@@ -39,13 +39,13 @@ export default function Example() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900" >
               {item.name}
             </a>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#contact" className="text-sm font-semibold leading-6 text-gray-900">
             Contact Us <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -79,6 +79,7 @@ export default function Example() {
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </a>
@@ -86,7 +87,7 @@ export default function Example() {
               </div>
               <div className="py-6">
                 <a
-                  href="/contact"
+                  href="#contact"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   📫 Contact Form

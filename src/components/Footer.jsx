@@ -35,7 +35,7 @@ export function Footer() {
               </svg>
             </Link>
           </div>
-          <p className="mt-6 text-sm text-slate-500 sm:mt-0">
+          <p className="mt-6 text-xs sm:text-sm text-slate-500 sm:mt-0">
             Copyright &copy; {new Date().getFullYear()} OEM Radio Repair. All rights
             reserved.
           </p>

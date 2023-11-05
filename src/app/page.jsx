@@ -1,9 +1,9 @@
-import { CallToAction } from '@/components/CallToAction'
+import  ForDealerships  from '@/components/ForDealerships'
 import { Faqs } from '@/components/Faqs'
 import { Footer } from '@/components/Footer'
 import  Header  from '@/components/Header'
 import { Hero } from '@/components/Hero'
-import { Pricing } from '@/components/Pricing'
+import Contact from '@/components/Contact'
 import  PrimaryFeatures  from '@/components/AboutUs'
 import SecondaryFeatures from '@/components/VehicleMakes'
 import { Testimonials } from '@/components/Testimonials'
@@ -19,6 +19,8 @@ export default function Home() {
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />
+        <ForDealerships />
+        <Contact />
       </main>
       <Footer />
     </>

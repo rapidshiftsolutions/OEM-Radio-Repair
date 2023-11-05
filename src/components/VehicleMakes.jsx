@@ -17,7 +17,7 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
           <div className="mx-auto w-full max-w-xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Which Brands Do We Support?</h2>
+            <h2 className="text-2xl sm:text-5xl font-bold tracking-tight text-gray-900">What Do We Repair?</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               We work on OEM Radios from a large number of manufacturers, but domestic vehicles are our specialty. If you have a vehicle with a busted screen, we are the team for you.
             </p>

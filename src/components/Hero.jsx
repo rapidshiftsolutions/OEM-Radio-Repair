@@ -25,9 +25,9 @@ export function Hero() {
       We make repairing your factory radio fast and easy using quality parts from trusted companies. Contact us today for more info.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/contact">Contact Us</Button>
+        <Button href="#contact">Contact Us</Button>
         <Button
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          href='#about'
           variant="outline"
         >
           <svg

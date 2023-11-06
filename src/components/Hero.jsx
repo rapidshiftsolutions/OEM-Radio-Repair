@@ -21,11 +21,11 @@ export function Hero() {
         </span>{' '}
       
       </h1>
-      <p className="mx-auto mt-6 sm:mt-14 max-w-2xl text-lg tracking-tight text-slate-700">
-      Let us repair your broken car radio touch screens and amps. Contact us today for more info.
+      <p className="mx-auto mt-6 sm:mt-14 max-w-2xl text-lg tracking-tight text-slate-700 pt-6">
+      We repair OEM Touch Screens and Amps so you don't have to. Let us take care of your radios, so you can get back to what's important.
       </p>
-      <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="#contact">Contact Us</Button>
+      <div className="mt-16 flex justify-center gap-x-6 ">
+        <Button href="#contact" className="animate-bounce">Contact Us</Button>
         <Button
           href='#about'
           variant="outline"

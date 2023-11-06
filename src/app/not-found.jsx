@@ -1,3 +1,6 @@
+import Image from 'next/image'
+
+
 export default function Example() {
   return (
     <>
@@ -10,7 +13,7 @@ export default function Example() {
         ```
       */}
       <main className="relative isolate min-h-full bg-blue-900">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1571753823631-6b68326c7c19?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
           className="absolute inset-0 -z-10 h-full w-full object-cover object-top opacity-50"

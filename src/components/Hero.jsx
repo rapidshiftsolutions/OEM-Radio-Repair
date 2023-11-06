@@ -32,15 +32,17 @@ export function Hero() {
       <a href='#contact'>
         <button
         type="button"
-        className="rounded-full bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        className="rounded-full bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
       >
         Contact Us
       </button></a>
-        <Button
-          type="button"
-          href='#about'
-          variant="outline"
-        >
+              <a href='#about'>
+        <button
+        type="button"
+        className="rounded-full bg-stone-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-stone-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-600"
+      >
+        Learn More
+      </button></a>
           <svg
             aria-hidden="true"
             className="h-3 w-3 flex-none fill-blue-600 group-active:fill-current"

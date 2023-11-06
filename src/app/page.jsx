@@ -16,7 +16,6 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Banner />
       <main>
         <Hero />
         <PrimaryFeatures />

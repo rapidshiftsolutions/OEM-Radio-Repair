@@ -22,7 +22,7 @@ export function Hero() {
       
       </h1>
       <p className="mx-auto mt-6 sm:mt-14 max-w-2xl text-lg tracking-tight text-slate-700 pt-6">
-      We repair OEM Touch Screens and Amps so you don't have to. Let us take care of your radios, so you can get back to what's important.
+      We repair OEM Touch Screens and Amps so you dont have to. Let us take care of your radios, so you can get back to work.
       </p>
       <div className="mt-16 flex justify-center gap-x-6 ">
         <Button href="#contact" className="animate-bounce">Contact Us</Button>

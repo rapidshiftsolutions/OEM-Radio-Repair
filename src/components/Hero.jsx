@@ -5,7 +5,7 @@ import { Container } from '@/components/Container'
 
 export function Hero() {
   return (
-    <Container className="pb-16 pt-20 text-center lg:pt-32">
+    <Container className="pb-16 pt-20 text-center lg:pt-32 ">
       <h1 className="mx-auto max-w-4xl font-display text-3xl sm:text-5xl md:text-7xl font-medium tracking-tight text-slate-900 sm:text-5xl md:text-7xl">
         OEM Radio Repairs{' '}
         <span className="relative whitespace-nowrap text-blue-600">

@@ -7,6 +7,7 @@ import Contact from '@/components/Contact'
 import  PrimaryFeatures  from '@/components/AboutUs'
 import SecondaryFeatures from '@/components/VehicleMakes'
 import { Testimonials } from '@/components/Testimonials'
+import  Banner  from '@/components/Banner'
 
 import { Route, Routes } from 'react-router-dom'
 
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <Header />
+      <Banner />
       <main>
         <Hero />
         <PrimaryFeatures />

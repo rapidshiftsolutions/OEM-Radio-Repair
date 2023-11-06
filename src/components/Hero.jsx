@@ -28,8 +28,9 @@ export function Hero() {
       We repair OEM Touch Screens and Amps so you dont have to. Let us take care of your radios, so you can get back to work.
       </p>
       <div className=" z-auto mt-16 flex justify-center gap-x-6 ">
-        <Button href="#cont" className="animate-bounce">Contact Us</Button>
+        <Button type="button" href="#cont" className="animate-bounce">Contact Us</Button>
         <Button
+          type="button"
           href='#about'
           variant="outline"
         >

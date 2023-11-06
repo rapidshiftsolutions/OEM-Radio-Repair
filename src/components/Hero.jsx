@@ -2,6 +2,7 @@
 
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -28,7 +29,7 @@ export function Hero() {
       We repair OEM Touch Screens and Amps so you dont have to. Let us take care of your radios, so you can get back to work.
       </p>
       <div className=" z-auto mt-16 flex justify-center gap-x-6 ">
-        <Button type="button" href="#cont" className="animate-bounce"><p href="#cont">Contact Us</p></Button>
+        <Button className="animate-bounce"><Link href="#contact">Contact Us</Link></Button>
         <Button
           type="button"
           href='#about'

@@ -4,7 +4,7 @@
 export default function Example() {
   return (
     <>
-      <div id="contact" className="m-auto flex justify-center py-6 sm:py-12 bg-blue-200">
+      <div id="contact" title="Google Contact Form" className="m-auto flex justify-center py-6 sm:py-12 bg-blue-200">
         
         <div id="cont" className="max-w-4/5 w-auto">
           <iframe className="w-screen"

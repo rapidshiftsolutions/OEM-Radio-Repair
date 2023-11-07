@@ -31,10 +31,10 @@ export default function Example() {
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Who Are We?</h2>
         <p className="mt-6 text-md sm:text-lg leading-8 text-gray-300">
-          An OEM Car Radio Repair Shop that specializes in repairing broken factory touch screens and OEM amps. We are located in Birmingham Alabama, but we serve customers all over the country.
+        An OEM automotive radio repair shop, located in Birmingham, Alabama, specializing in repairing factory touch screens and amps. We serve customers nationwide.
         </p>
         <p className="mt-6 text-md sm:text-lg leading-8 text-gray-300">
-          Our family has been in the Automotive Audio business for decades and we noticed a gap in our local market. No-one provides quality OEM Radio repairs at a decent price. This is when OEM Radio Repair was born.
+        Our family-owned business began decades ago after realizing a gap in automotive audio service in the local market. Our mission is to provide quality service at a reasonable price.
         </p>
       </div>
     </div>

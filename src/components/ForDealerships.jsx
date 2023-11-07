@@ -4,21 +4,21 @@ const features = [
   {
     name: 'Genuine Parts 💯',
     description:
-      'We only use high quality parts, every time, no exceptions. If you work with us, you will get nothing but the best.',
+      'We only use high quality parts, no exceptions, to ensure the best service.',
     href: '#',
     icon: InboxIcon,
   },
   {
     name: 'Fast Turn Arounds 🏁',
     description:
-      'We have this down to a science. When you choose us, we will make sure you get your repairs completed as soon as possible.',
+      'We have this down to a science. Entrust us to complete your repairs in a timely manner.',
     href: '#',
     icon: UsersIcon,
   },
   {
     name: 'Quality Worksmanship 🛠️',
     description:
-      'Every single repair you trust with us is completed in Birmingham Alabama by our technicians hands. We are your trusted resource.',
+      'All repairs are completed in Birmingham, Alabama by our expert technicians.',
     href: '#',
     icon: TrashIcon,
   },

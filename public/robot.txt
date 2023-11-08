@@ -1,2 +1,5 @@
-User-agent: *
-Allow: /
+# start of file
+user-agent: *
+allow: /
+
+sitemap: https://oemradiorepair.com/sitemap-file.xml

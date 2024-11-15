@@ -1,37 +1,53 @@
-const formsPlugin = require('@tailwindcss/forms')
-const headlessuiPlugin = require('@headlessui/tailwindcss')
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    fontSize: {
-      xs: ['0.75rem', { lineHeight: '1rem' }],
-      sm: ['0.875rem', { lineHeight: '1.5rem' }],
-      base: ['1rem', { lineHeight: '1.75rem' }],
-      lg: ['1.125rem', { lineHeight: '2rem' }],
-      xl: ['1.25rem', { lineHeight: '2rem' }],
-      '2xl': ['1.5rem', { lineHeight: '2rem' }],
-      '3xl': ['2rem', { lineHeight: '2.5rem' }],
-      '4xl': ['2.5rem', { lineHeight: '3.5rem' }],
-      '5xl': ['3rem', { lineHeight: '3.5rem' }],
-      '6xl': ['3.75rem', { lineHeight: '1' }],
-      '7xl': ['4.5rem', { lineHeight: '1.1' }],
-      '8xl': ['6rem', { lineHeight: '1' }],
-      '9xl': ['8rem', { lineHeight: '1' }],
-    },
     extend: {
+      fontFamily: {
+        sans: ['SFB', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        primary: {
+          50: '#e6f7ff',        // lightest blue
+          100: '#bae7ff',
+          200: '#91d5ff',
+          300: '#69c0ff',
+          400: '#40a9ff',
+          500: '#1890ff',       // OEM Radio Repair blue
+          600: '#096dd9',
+          700: '#0050b3',
+          800: '#003a8c',
+          900: '#002766',       // darkest blue
+        },
+        accent: {
+          50: '#e6ffe6',        // light pastel green
+          100: '#bfffbf',
+          200: '#99ff99',
+          300: '#66ff66',
+          400: '#33ff33',
+          500: '#00e600',       // vibrant pastel green
+          600: '#00b300',
+          700: '#008000',
+          800: '#005c00',
+          900: '#003d00',       // deep green accent
+        },
+        light: {
+          50: '#fafafa',        // lightest neutral with warmth
+          100: '#f3f3f3',
+          200: '#e4e4e4',
+          300: '#cecece',
+          400: '#a1a1a1',
+          500: '#7a7a7a',       // balanced neutral
+          600: '#606060',
+          700: '#474747',
+          800: '#313131',
+          900: '#202020',       // charcoal dark
+        },
+      },
       borderRadius: {
         '4xl': '2rem',
       },
-      fontFamily: {
-        sans: 'var(--font-inter)',
-        display: 'var(--font-lexend)',
-      },
-      maxWidth: {
-        '2xl': '40rem',
-      },
     },
   },
-  plugins: [formsPlugin, headlessuiPlugin],
-}
+  plugins: [],
+};

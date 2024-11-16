@@ -49,11 +49,11 @@ export default function TouchScreenRepair() {
       <Navbar />
       <QuickNav />
       <main>
-        <div className="overflow-hidden bg-light-50 py-24 sm:py-32">
+        <div className="overflow-hidden bg-light-50 py-12 sm:py-32">
           <div className="mx-auto max-w-3xl px-6 lg:max-w-5xl lg:px-8">
             <div className="max-w-4xl">
-              <h1 className="text-4xl font-semibold tracking-tight text-primary-900 sm:text-5xl mb-10">
-                Touch Screen Repair Services
+              <h1 className="text-3xl font-semibold tracking-tight text-primary-900 sm:text-5xl mb-10">
+                Touch Screen Repair
               </h1>
               <p className="text-base leading-7 text-gray-700 mb-8">
                 Has your vehicle&apos;s touch screen stopped responding? Experiencing calibration issues or intermittent responsiveness? OEM Radio Repair offers specialized touch screen repair services for all makes and models. Located in Birmingham, we ensure that your vehicle&apos;s infotainment system is restored to optimal condition quickly and efficiently.

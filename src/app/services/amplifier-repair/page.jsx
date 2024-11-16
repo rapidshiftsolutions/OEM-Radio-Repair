@@ -50,10 +50,10 @@ export default function AmplifierRepair() {
       <Navbar />
       <QuickNav />
       <main>
-        <div className="overflow-hidden bg-light-50 py-24 sm:py-32">
+        <div className="overflow-hidden bg-light-50 py-12 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:max-w-7xl lg:px-8">
             <div className="max-w-4xl">
-              <h1 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl mb-10">
+              <h1 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl mb-10">
                 Amplifier Repair Services
               </h1>
               <p className="text-xl leading-8 text-gray-700 mb-8">

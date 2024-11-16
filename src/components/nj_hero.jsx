@@ -222,13 +222,20 @@ const HeroForm = ({
   setFormData,
 }) => {
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const [isRecaptchaReady, setIsRecaptchaReady] = useState(false);
+
+  useEffect(() => {
+    // Check if the reCAPTCHA is ready
+    if (executeRecaptcha) {
+      setIsRecaptchaReady(true);
+    }
+  }, [executeRecaptcha]);
 
   // Handle form submission with Google reCAPTCHA
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (!executeRecaptcha) {
-      console.error('Execute reCAPTCHA not yet available');
+    if (!isRecaptchaReady) {
       alert('reCAPTCHA is not ready yet. Please try again shortly.');
       return;
     }

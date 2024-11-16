@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import Select from 'react-select';
-
 const carOptions = [
   { value: 'acura', label: 'Acura' },
   { value: 'alfa_romeo', label: 'Alfa Romeo' },
@@ -136,7 +135,6 @@ const carOptions = [
   { value: 'zenvo', label: 'Zenvo' },
   { value: 'zotye', label: 'Zotye' },
 ];
-
 const yearOptions = Array.from({ length: 100 }, (_, i) => {
   const year = new Date().getFullYear() - i;
   return { value: year.toString(), label: year.toString() };
@@ -159,7 +157,14 @@ const Hero = () => {
     vehicleType: '',
   });
 
+  // Ensure the recaptcha key is set
+  const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
   useEffect(() => {
+    if (!reCaptchaKey) {
+      console.error('ReCaptcha key is missing. Make sure to set NEXT_PUBLIC_RECAPTCHA_SITE_KEY in your environment.');
+    }
+
     let directionX = 1;
     let directionY = 1;
     let gradientPositionX = 0;
@@ -183,7 +188,7 @@ const Hero = () => {
     };
 
     animateGradient();
-  }, []);
+  }, [reCaptchaKey]);
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -215,7 +220,7 @@ const Hero = () => {
   };
 
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
+    <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
       <HeroForm
         formData={formData}
         handleInputChange={handleInputChange}
@@ -247,7 +252,7 @@ const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChan
         headers: {
           'Content-Type': 'application/json',
         },
-        mode: 'no-cors', // This bypasses CORS checks but limits response handling
+        mode: 'no-cors',
         body: JSON.stringify({ ...formData, token }),
       });
 
@@ -262,7 +267,7 @@ const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChan
       });
     } catch (error) {
       console.error('Form submission failed', error);
-      alert('');
+      alert('There was an issue submitting the form. Please try again later.');
     }
   };
 
@@ -423,6 +428,3 @@ const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChan
 };
 
 export default Hero;
-
-
-

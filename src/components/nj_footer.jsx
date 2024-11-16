@@ -26,7 +26,7 @@ export default function Footer() {
             <img
               alt="OEM Radio Repair Logo"
               src="/OEMRadioRepair/OEMRadioRepair-w.svg" // Update with the actual logo path
-              className="h-16 pr-0 md:pr-24"
+              className="h-8 pr-0 md:pr-24"
             />
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 xl:col-span-3 xl:mt-0">

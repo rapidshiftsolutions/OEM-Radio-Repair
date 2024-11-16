@@ -6,7 +6,6 @@ import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react'
 import Image from 'next/image'
 
-
 const navigation = {
   information: [ //contact
     { name: 'About Us', href: '/about' },
@@ -137,20 +136,31 @@ export default function NewNavbar() {
 
       {mobileMenuOpen && (
         <Disclosure as="div" className="bg-white shadow-md lg:hidden">
-          <div className="space-y-2 px-4 pb-4 pt-2">
+          <div className="px-4 pb-4 pt-2">
             {Object.keys(navigation).map((category) => (
-              <div key={category}>
-                <h3 className="text-sm font-medium text-light-50">{category}</h3>
-                {navigation[category].map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="block px-6 py-2 text-sm text-light-700 hover:bg-light-50"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
+              <Disclosure key={category} className="mb-4">
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button className="flex w-full items-center justify-between py-2 text-left text-base font-medium text-primary-600 focus:outline-none">
+                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                      <ChevronDownIcon
+                        className={`h-5 w-5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+                      />
+                    </Disclosure.Button>
+                    <Disclosure.Panel className="mt-2 space-y-2">
+                      {navigation[category].map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="block px-4 py-2 text-sm text-gray-700 rounded-md hover:bg-gray-100 hover:text-primary-600 transition-colors"
+                        >
+                          {item.name}
+                        </a>
+                      ))}
+                    </Disclosure.Panel>
+                  </>
+                )}
+              </Disclosure>
             ))}
           </div>
         </Disclosure>

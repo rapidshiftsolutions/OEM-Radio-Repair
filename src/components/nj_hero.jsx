@@ -278,11 +278,11 @@ const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChan
 
       <div className="relative z-10 flex w-full flex-col md:flex-row">
         <div className="w-full max-w-lg px-6 text-left md:w-2/3 md:max-w-4xl md:pl-16 md:mr-16">
-          <h1 className="font-md mb-4 text-2xl text-white md:text-6xl">
-            <b className="text-primary-100">OEM Radio Repairs</b>
-            <br /> <a className="text-4xl md:text-5xl font-md">for Factory Radios and Amplifiers.</a>
+          <h1 className=" mb-4 text-3xl text-white md:text-6xl">
+            <b className="text-primary-100 font-bold">OEM Radio Repairs</b>
+            <br /> <a className="text-3xl md:text-5xl font-sm">for Factory Radios<br></br> and Amplifiers.</a>
           </h1>
-          <p className="text-lg text-light-100 md:mb-12 md:text-xl">
+          <p className="text-lg text-light-100 pb-6 md:mb-12 md:pb-0 md:text-xl">
             OEM Radio Repair offers expert solutions for factory radios, touch screens, and amplifiers. Fast, reliable, and quality service you can trust.
           </p>
           <h2 className="mb-4 hidden text-2xl text-white md:block">Why Choose OEM Radio Repair?</h2>
@@ -356,15 +356,14 @@ const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChan
             <div className="flex space-x-4">
               <div className="w-1/2">
                 <label htmlFor="car" className="block text-sm font-semibold text-gray-900">
-                  Select Your Car
-                </label>
+                  Vehicle Brand                </label>
                 <div className="mt-2.5">
                   <Select
                     id="car"
                     options={carOptions}
                     value={carOptions.find((option) => option.value === formData.car)}
                     onChange={handleCarChange}
-                    placeholder="Select your car"
+                    placeholder="Brand"
                     className="react-select-container"
                     classNamePrefix="react-select"
                   />
@@ -380,7 +379,7 @@ const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChan
                     options={vehicleTypeOptions}
                     value={vehicleTypeOptions.find((option) => option.value === formData.vehicleType)}
                     onChange={handleVehicleTypeChange}
-                    placeholder="Select vehicle type"
+                    placeholder="Type"
                     className="react-select-container"
                     classNamePrefix="react-select"
                   />

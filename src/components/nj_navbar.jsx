@@ -34,7 +34,7 @@ export default function NewNavbar() {
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center">
             <a href="/">
-              <Image src="/OEMRadioRepair/OEMRadioRepair-w.svg" width={120} height={60} alt="OEM Radio Repair Logo" className="ml-4 h-12 w-auto" />
+              <Image src="/OEMRadioRepair/OEMRadioRepair-w.svg" width={120} height={60} alt="OEM Radio Repair Logo" className="ml-4 h-6 md:h-12 w-auto" />
             </a>
           </div>
 

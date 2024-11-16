@@ -50,19 +50,17 @@ export default function ServiceLocations() {
       <Navbar />
       <QuickNav />
       <main>
-        <div className="overflow-hidden bg-white py-24 sm:py-32">
+        <div className="overflow-hidden bg-white py-10 sm:py-32">
           <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
             <div className="max-w-4xl">
-              <p className="text-base/7 font-semibold text-primary-600">Service Locations</p>
               <h1 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                OEM Radio Repair Service Areas
+Our Service Areas
               </h1>
               <p className="mt-6 text-balance text-xl/8 text-gray-700">
                 OEM Radio Repair is proud to serve Birmingham, Alabama, and the surrounding areas. Our specialized repair services include factory radios, touch screens, and amplifiers, ensuring that your vehicle&apos;s audio system is restored to its original condition.
               </p>
             </div>
-            <section className="mt-20">
-              <h2 className="text-pretty text-2xl font-semibold tracking-tight text-gray-900">Birmingham, Alabama and Surrounding Areas</h2>
+            <section className="">
               <ul className="mt-6 list-disc pl-8 text-base/7 text-gray-600">
                 <li>Birmingham</li>
                 <li>Hoover</li>

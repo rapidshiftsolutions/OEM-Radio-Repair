@@ -40,7 +40,7 @@ export default function Careers() {
       <main>
         <div className="careers-container bg-light-50 text-gray-900 py-16 px-8">
           <div className="mx-auto max-w-7xl">
-            <h1 className="text-4xl font-bold mb-8 text-primary-900">Careers at OEM Radio Repair</h1>
+            <h1 className="text-4xl font-bold mb-8 text-primary-900">Join the Team</h1>
             <p className="mb-8 text-lg">
               Are you passionate about automotive electronics and customer service? OEM Radio Repair is looking for talented and motivated individuals to join our team. We specialize in repairing factory radios, touch screens, and amplifiers, and we pride ourselves on delivering the highest quality of service to our customers in Birmingham and the surrounding areas.
             </p>

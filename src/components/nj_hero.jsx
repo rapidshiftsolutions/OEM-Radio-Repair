@@ -137,7 +137,6 @@ const carOptions = [
   { value: 'zotye', label: 'Zotye' },
 ];
 
-
 const yearOptions = Array.from({ length: 100 }, (_, i) => {
   const year = new Date().getFullYear() - i;
   return { value: year.toString(), label: year.toString() };
@@ -243,17 +242,14 @@ const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChan
     try {
       const token = await executeRecaptcha('submit');
 
-      const response = await fetch('https://hooks.zapier.com/hooks/catch/19076579/2rh6o5x/', {
+      await fetch('https://hooks.zapier.com/hooks/catch/19076579/2rh6o5x/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        mode: 'no-cors', // This bypasses CORS checks but limits response handling
         body: JSON.stringify({ ...formData, token }),
       });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
 
       alert('Thank you for contacting us! We will get back to you shortly.');
       setFormData({
@@ -427,7 +423,6 @@ const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChan
 };
 
 export default Hero;
-
 
 
 

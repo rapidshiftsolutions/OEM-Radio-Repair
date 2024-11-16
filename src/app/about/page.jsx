@@ -13,7 +13,7 @@ export default function About() {
       <main>
         <div className="about-container bg-light-50 text-gray-900 py-16 px-8">
           <div className="mx-auto max-w-7xl">
-            <h1 className="text-4xl font-bold mb-8 text-primary-900">About OEM Radio Repair</h1>
+            <h1 className="text-4xl font-bold mb-8 text-primary-900">About Us</h1>
             <p className="mb-8 text-lg">
               OEM Radio Repair was founded by Alex Harmon, whose family has been deeply involved in the car audio industry for several decades. With strong roots in Birmingham, Alabama, Alex carries forward a legacy of passion for car audio systems and quality craftsmanship.
             </p>

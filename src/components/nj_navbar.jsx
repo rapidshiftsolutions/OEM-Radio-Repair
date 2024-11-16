@@ -45,7 +45,7 @@ export default function NewNavbar() {
                     Information
                     <ChevronDownIcon className="h-5 w-5" />
                   </PopoverButton>
-                  <PopoverPanel className="absolute z-20 mt-2 w-48 rounded-lg bg-white shadow-lg ring-1 ring-light-900/5">
+                  <PopoverPanel className="absolute z-20 mt-2 w-48 rounded-lg bg-light-200 shadow-lg ring-1 ring-light-900/5">
                     <div className="p-4">
                       {navigation.information.map((item) => (
                         <a key={item.name} href={item.href} className="block px-4 py-2 text-sm font-medium text-light-700 hover:bg-light-100">
@@ -64,7 +64,7 @@ export default function NewNavbar() {
                     Services
                     <ChevronDownIcon className="h-5 w-5" />
                   </PopoverButton>
-                  <PopoverPanel className="absolute z-20 mt-2 w-48 rounded-lg bg-white shadow-lg ring-1 ring-light-900/5">
+                  <PopoverPanel className="absolute z-20 mt-2 w-48 rounded-lg bg-light-200 shadow-lg ring-1 ring-light-900/5">
                     <div className="p-4">
                       {navigation.services.map((item) => (
                         <a key={item.name} href={item.href} className="block px-4 py-2 text-sm font-medium text-light-700 hover:bg-light-100">
@@ -83,7 +83,7 @@ export default function NewNavbar() {
                     Legal
                     <ChevronDownIcon className="h-5 w-5" />
                   </PopoverButton>
-                  <PopoverPanel className="absolute z-20 mt-2 w-48 rounded-lg bg-white shadow-lg ring-1 ring-light-900/5">
+                  <PopoverPanel className="absolute z-20 mt-2 w-48 rounded-lg bg-light-200 shadow-lg ring-1 ring-light-900/5">
                     <div className="p-4">
                       {navigation.legal.map((item) => (
                         <a key={item.name} href={item.href} className="block px-4 py-2 text-sm font-medium text-light-700 hover:bg-light-100">
@@ -135,7 +135,7 @@ export default function NewNavbar() {
       </div>
 
       {mobileMenuOpen && (
-        <Disclosure as="div" className="bg-white shadow-md lg:hidden">
+        <Disclosure as="div" className="bg-light-200 shadow-md lg:hidden">
           <div className="px-4 pb-4 pt-2">
             {Object.keys(navigation).map((category) => (
               <Disclosure key={category} className="mb-4">

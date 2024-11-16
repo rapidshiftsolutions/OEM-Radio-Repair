@@ -262,7 +262,7 @@ const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChan
       });
     } catch (error) {
       console.error('Form submission failed', error);
-      alert('There was an issue submitting the form. Please try again later.');
+      alert('');
     }
   };
 

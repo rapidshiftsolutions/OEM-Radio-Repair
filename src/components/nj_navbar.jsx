@@ -6,17 +6,19 @@ import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react'
 import Image from 'next/image'
 
+
 const navigation = {
-  contact: [
-    { name: 'Contact Us', href: '/contact' },
+  information: [ //contact
+    { name: 'About Us', href: '/about' },
+    { name: 'Locations', href: '/locations' },
     { name: 'Careers', href: '/careers' },
   ],
-  services: [
-    { name: 'Repair Services', href: '/services/repair' },
+  services: [ //services
     { name: 'Amplifier Repair', href: '/services/amplifier-repair' },
     { name: 'Factory Touch Screen Repair', href: '/services/touch-screen-repair' },
   ],
-  information: [
+
+  legal: [ //information
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Warranty', href: '/warranty' },
@@ -41,12 +43,12 @@ export default function NewNavbar() {
               {({ open }) => (
                 <>
                   <PopoverButton className="inline-flex items-center gap-1 text-sm font-medium text-light-50 hover:text-primary-100">
-                    Contact
+                    Information
                     <ChevronDownIcon className="h-5 w-5" />
                   </PopoverButton>
                   <PopoverPanel className="absolute z-20 mt-2 w-48 rounded-lg bg-white shadow-lg ring-1 ring-light-900/5">
                     <div className="p-4">
-                      {navigation.contact.map((item) => (
+                      {navigation.information.map((item) => (
                         <a key={item.name} href={item.href} className="block px-4 py-2 text-sm font-medium text-light-700 hover:bg-light-100">
                           {item.name}
                         </a>
@@ -79,12 +81,12 @@ export default function NewNavbar() {
               {({ open }) => (
                 <>
                   <PopoverButton className="inline-flex items-center gap-1 text-sm font-medium text-light-50 hover:text-primary-100">
-                    Information
+                    Legal
                     <ChevronDownIcon className="h-5 w-5" />
                   </PopoverButton>
                   <PopoverPanel className="absolute z-20 mt-2 w-48 rounded-lg bg-white shadow-lg ring-1 ring-light-900/5">
                     <div className="p-4">
-                      {navigation.information.map((item) => (
+                      {navigation.legal.map((item) => (
                         <a key={item.name} href={item.href} className="block px-4 py-2 text-sm font-medium text-light-700 hover:bg-light-100">
                           {item.name}
                         </a>

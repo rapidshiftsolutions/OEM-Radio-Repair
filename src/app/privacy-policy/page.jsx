@@ -18,7 +18,7 @@ export default function Home() {
           <strong>Effective Date:</strong> November 15, 2024
         </p>
         <p className="mb-8 text-lg">
-          <strong>OEM Radio Repair</strong> ("we," "our," or "us") respects your privacy and is committed to
+          <strong>OEM Radio Repair</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to
           protecting your personal information. This Privacy Policy describes how we collect, use, disclose, and
           safeguard your information when you visit our website, use our services, or interact with us in other ways.
           Please read this Privacy Policy carefully. By using our website or services, you agree to the practices
@@ -99,7 +99,7 @@ export default function Home() {
           We retain your personal information for as long as necessary to fulfill the purposes for which it was collected or as required by applicable laws. When your information is no longer needed, we will securely delete or anonymize it.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4">7. Children's Privacy</h2>
+        <h2 className="text-2xl font-semibold mb-4">7. Children&apos;s Privacy</h2>
         <p className="mb-8">
           Our services are not directed to children under the age of 13. We do not knowingly collect personal information from children. If we become aware that we have collected information from a child under 13, we will take steps to delete it promptly.
         </p>

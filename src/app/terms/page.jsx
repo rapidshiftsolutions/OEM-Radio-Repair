@@ -21,7 +21,7 @@ export default function TermsConditions() {
               <strong>Effective Date:</strong> November 15, 2024
             </p>
             <p className="mb-8 text-lg">
-              Welcome to <strong>OEM Radio Repair</strong> ("we," "our," or "us"). By accessing or using our
+              Welcome to <strong>OEM Radio Repair</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). By accessing or using our
               services, you agree to be bound by these Terms and Conditions. Please read them carefully.
             </p>
 

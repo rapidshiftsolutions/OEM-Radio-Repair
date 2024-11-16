@@ -57,13 +57,13 @@ export default function AmplifierRepair() {
                 Amplifier Repair Services
               </h1>
               <p className="text-xl leading-8 text-gray-700 mb-8">
-                OEM Radio Repair specializes in factory amplifier repair services. Our team of expert technicians has years of experience working with a wide range of vehicle makes and models, ensuring that your vehicle's audio system is restored to its original high-quality performance.
+                OEM Radio Repair specializes in factory amplifier repair services. Our team of expert technicians has years of experience working with a wide range of vehicle makes and models, ensuring that your vehicle&apos;s audio system is restored to its original high-quality performance.
               </p>
             </div>
             <div className="mt-12">
               <Image
                 alt="Amplifier Repair Service"
-                src="/OEMRadioRepair/marketing/amplifier-repair.webp"
+                src="/OEMRadioRepair/marketing/old-toyota.webp"
                 width={1200}
                 height={800}
                 className="rounded-xl shadow-lg object-cover"
@@ -79,7 +79,7 @@ export default function AmplifierRepair() {
                   <strong>Certified Technicians:</strong> Our team consists of highly-trained technicians who understand the intricacies of vehicle audio systems.
                 </li>
                 <li className="mb-4">
-                  <strong>Quality Service:</strong> We provide comprehensive amplifier repair services, ensuring that your vehicle's sound quality is restored to its optimal level.
+                  <strong>Quality Service:</strong> We provide comprehensive amplifier repair services, ensuring that your vehicle&apos;s sound quality is restored to its optimal level.
                 </li>
                 <li className="mb-4">
                   <strong>Affordable Pricing:</strong> We offer competitive pricing for all our amplifier repair services without compromising on quality.
@@ -99,7 +99,7 @@ export default function AmplifierRepair() {
             <section className="mt-16">
               <h2 className="text-2xl font-semibold tracking-tight text-gray-900 mb-4">Get Started Today</h2>
               <p className="text-lg text-gray-700 mb-8">
-                If you are experiencing issues with your vehicle's factory amplifier, contact OEM Radio Repair today. We provide quick turnaround times and excellent customer service to get you back on the road with the sound quality you love.
+                If you are experiencing issues with your vehicle&apos;s factory amplifier, contact OEM Radio Repair today. We provide quick turnaround times and excellent customer service to get you back on the road with the sound quality you love.
               </p>
               <a
                 href="/contact"

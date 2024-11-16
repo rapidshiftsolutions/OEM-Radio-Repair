@@ -58,7 +58,7 @@ export default function ServiceLocations() {
                 OEM Radio Repair Service Areas
               </h1>
               <p className="mt-6 text-balance text-xl/8 text-gray-700">
-                OEM Radio Repair is proud to serve Birmingham, Alabama, and the surrounding areas. Our specialized repair services include factory radios, touch screens, and amplifiers, ensuring that your vehicle's audio system is restored to its original condition.
+                OEM Radio Repair is proud to serve Birmingham, Alabama, and the surrounding areas. Our specialized repair services include factory radios, touch screens, and amplifiers, ensuring that your vehicle&apos;s audio system is restored to its original condition.
               </p>
             </div>
             <section className="mt-20">
@@ -76,7 +76,7 @@ export default function ServiceLocations() {
                 <li>Gardendale</li>
               </ul>
               <p className="mt-8 text-base/7 text-gray-600">
-                Our experienced team is dedicated to providing high-quality, reliable repair services for your vehicle's audio system. Whether you're dealing with a malfunctioning radio, amplifier, or touch screen, OEM Radio Repair has you covered.
+                Our experienced team is dedicated to providing high-quality, reliable repair services for your vehicle&apos;s audio system. Whether you&apos;re dealing with a malfunctioning radio, amplifier, or touch screen, OEM Radio Repair has you covered.
               </p>
             </section>
           </div>

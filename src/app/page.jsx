@@ -13,7 +13,6 @@ export default function Home() {
       <main>
         <Hero />
         <Info />
-        <Hero />
       </main>
       <Footer />
       <RapidShift />

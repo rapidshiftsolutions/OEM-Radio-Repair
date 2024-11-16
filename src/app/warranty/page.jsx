@@ -86,7 +86,7 @@ export default function Warranty() {
                 To ensure your repaired components remain in optimal condition and that your warranty remains valid, it is essential to follow proper maintenance guidelines. This includes avoiding exposure to excessive moisture, preventing electrical overloads, and handling all components with care. Failure to properly maintain your audio system may void the warranty.
               </p>
               <p className="mt-4 text-base/7 text-gray-600">
-                OEM Radio Repair also offers routine maintenance services to help keep your vehicle's audio system in top shape. Regular checkups will not only keep your system functioning properly but also extend its lifespan.
+                OEM Radio Repair also offers routine maintenance services to help keep your vehicles audio system in top shape. Regular checkups will not only keep your system functioning properly but also extend its lifespan.
               </p>
             </section>
             <section className="mb-10">

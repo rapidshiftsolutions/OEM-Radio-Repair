@@ -56,7 +56,7 @@ export default function TouchScreenRepair() {
                 Touch Screen Repair Services
               </h1>
               <p className="text-base leading-7 text-gray-700 mb-8">
-                Has your vehicle's touch screen stopped responding? Experiencing calibration issues or intermittent responsiveness? OEM Radio Repair offers specialized touch screen repair services for all makes and models. Located in Birmingham, we ensure that your vehicle's infotainment system is restored to optimal condition quickly and efficiently.
+                Has your vehicle&apos;s touch screen stopped responding? Experiencing calibration issues or intermittent responsiveness? OEM Radio Repair offers specialized touch screen repair services for all makes and models. Located in Birmingham, we ensure that your vehicle&apos;s infotainment system is restored to optimal condition quickly and efficiently.
               </p>
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Common Issues We Fix</h2>
@@ -71,10 +71,10 @@ export default function TouchScreenRepair() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Why Choose Us?</h2>
                 <p className="text-base/7 text-gray-600">
-                  At OEM Radio Repair, we understand the importance of your vehicle's infotainment system. Our expert technicians have years of experience working with touch screen interfaces, ensuring precise and reliable repairs. We use high-quality replacement parts and thorough testing procedures to guarantee your satisfaction.
+                  At OEM Radio Repair, we understand the importance of your vehicle&apos;s infotainment system. Our expert technicians have years of experience working with touch screen interfaces, ensuring precise and reliable repairs. We use high-quality replacement parts and thorough testing procedures to guarantee your satisfaction.
                 </p>
                 <p className="mt-4 text-base/7 text-gray-600">
-                  Whether it's a minor calibration fix or replacing an entire touch screen, we have the tools and expertise to handle it. We pride ourselves on offering quick turnaround times, transparent pricing, and exceptional service to all our customers.
+                  Whether it&apos;s a minor calibration fix or replacing an entire touch screen, we have the tools and expertise to handle it. We pride ourselves on offering quick turnaround times, transparent pricing, and exceptional service to all our customers.
                 </p>
               </section>
               <section className="mb-10">

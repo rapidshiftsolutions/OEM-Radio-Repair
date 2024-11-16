@@ -15,22 +15,16 @@ export default function About() {
           <div className="mx-auto max-w-7xl">
             <h1 className="text-4xl font-bold mb-8 text-primary-900">About OEM Radio Repair</h1>
             <p className="mb-8 text-lg">
-              OEM Radio Repair was founded by Colby Martin and Randy Powell, two hardworking individuals who share
-              a passion for family, the outdoors, and their trusty John Deere equipment. With deep roots in their
-              community, Colby and Randy are dedicated not only to their families but also to making a difference for
-              their clients.
+              OEM Radio Repair was founded by Alex Harmon, whose family has been deeply involved in the car audio industry for several decades. With strong roots in Birmingham, Alabama, Alex carries forward a legacy of passion for car audio systems and quality craftsmanship.
             </p>
             <p className="mb-8 text-lg">
-              Their love for hard work and quality craftsmanship is at the core of OEM Radio Repair. They
-              understand the value of a job well done and believe in delivering services that are effective, efficient,
-              and always done right the first time. From advanced terrain management to precise right-of-way mowing,
-              Colby and Randy lead their team with the values that make family strong: integrity, honesty, and dedication.
+              Growing up in Birmingham, Alex was surrounded by the art and science of car audio. His family has been a trusted name in the industry, known for their expertise and dedication to bringing the best sound experience to every vehicle. Today, OEM Radio Repair embodies the same spirit of innovation, customer focus, and commitment to excellence that Alex's family has always valued.
             </p>
             <p className="mb-8 text-lg">
-              At OEM Radio Repair, we treat every project like it's our own, ensuring that our clients receive the
-              best solutions to keep their land well-maintained, safe, and productive. Whether it's industrial weed
-              control or retention pond maintenance, our commitment to excellence sets us apart. We aren't just a
-              service provider; we're your partners in land management.
+              At OEM Radio Repair, we specialize in repairing factory radios, touch screens, and amplifiers. We pride ourselves on our meticulous attention to detail, ensuring that each repair is completed to the highest standard. Our mission is to provide Birmingham and the surrounding areas with reliable, high-quality car audio repair services, all while maintaining the family values of integrity, honesty, and dedication that have been at the heart of our business for generations.
+            </p>
+            <p className="mb-8 text-lg">
+              Whether you need a touch screen repaired, an amplifier fixed, or a complete factory radio overhaul, our experienced team is here to help. We treat every job as if it were for our own family, ensuring that your vehicle's audio system performs at its best.
             </p>
           </div>
         </div>

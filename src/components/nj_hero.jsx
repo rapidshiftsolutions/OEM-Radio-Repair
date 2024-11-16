@@ -1,8 +1,11 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from 'react';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import Select from 'react-select';
+
+const Select = dynamic(() => import('react-select'), { ssr: false });
+
 const carOptions = [
   { value: 'acura', label: 'Acura' },
   { value: 'alfa_romeo', label: 'Alfa Romeo' },
@@ -10,37 +13,26 @@ const carOptions = [
   { value: 'audi', label: 'Audi' },
   { value: 'bentley', label: 'Bentley' },
   { value: 'bmw', label: 'BMW' },
-  { value: 'bugatti', label: 'Bugatti' },
   { value: 'buick', label: 'Buick' },
   { value: 'cadillac', label: 'Cadillac' },
   { value: 'chevrolet', label: 'Chevrolet' },
   { value: 'chrysler', label: 'Chrysler' },
-  { value: 'citroen', label: 'Citroën' },
-  { value: 'dacia', label: 'Dacia' },
-  { value: 'daewoo', label: 'Daewoo' },
-  { value: 'daihatsu', label: 'Daihatsu' },
   { value: 'dodge', label: 'Dodge' },
   { value: 'ferrari', label: 'Ferrari' },
   { value: 'fiat', label: 'Fiat' },
   { value: 'fisker', label: 'Fisker' },
   { value: 'ford', label: 'Ford' },
   { value: 'genesis', label: 'Genesis' },
-  { value: 'geo', label: 'Geo' },
   { value: 'gmc', label: 'GMC' },
-  { value: 'haval', label: 'Haval' },
   { value: 'honda', label: 'Honda' },
-  { value: 'hummer', label: 'Hummer' },
   { value: 'hyundai', label: 'Hyundai' },
   { value: 'infiniti', label: 'Infiniti' },
   { value: 'isuzu', label: 'Isuzu' },
   { value: 'jaguar', label: 'Jaguar' },
   { value: 'jeep', label: 'Jeep' },
-  { value: 'karma', label: 'Karma' },
   { value: 'kia', label: 'Kia' },
   { value: 'koenigsegg', label: 'Koenigsegg' },
-  { value: 'lada', label: 'Lada' },
   { value: 'lamborghini', label: 'Lamborghini' },
-  { value: 'lancia', label: 'Lancia' },
   { value: 'land_rover', label: 'Land Rover' },
   { value: 'lexus', label: 'Lexus' },
   { value: 'lincoln', label: 'Lincoln' },
@@ -55,8 +47,6 @@ const carOptions = [
   { value: 'mini', label: 'Mini' },
   { value: 'mitsubishi', label: 'Mitsubishi' },
   { value: 'nissan', label: 'Nissan' },
-  { value: 'noble', label: 'Noble' },
-  { value: 'opel', label: 'Opel' },
   { value: 'pagani', label: 'Pagani' },
   { value: 'peugeot', label: 'Peugeot' },
   { value: 'plymouth', label: 'Plymouth' },
@@ -69,16 +59,12 @@ const carOptions = [
   { value: 'saab', label: 'Saab' },
   { value: 'saturn', label: 'Saturn' },
   { value: 'scion', label: 'Scion' },
-  { value: 'seat', label: 'SEAT' },
-  { value: 'skoda', label: 'Škoda' },
   { value: 'smart', label: 'Smart' },
-  { value: 'ssangyong', label: 'SsangYong' },
   { value: 'subaru', label: 'Subaru' },
   { value: 'suzuki', label: 'Suzuki' },
   { value: 'tata', label: 'Tata' },
   { value: 'tesla', label: 'Tesla' },
   { value: 'toyota', label: 'Toyota' },
-  { value: 'triumph', label: 'Triumph' },
   { value: 'volkswagen', label: 'Volkswagen' },
   { value: 'volvo', label: 'Volvo' },
   { value: 'alpine', label: 'Alpine' },
@@ -91,24 +77,28 @@ const carOptions = [
   { value: 'caterham', label: 'Caterham' },
   { value: 'changan', label: 'Changan' },
   { value: 'chery', label: 'Chery' },
+  { value: 'daewoo', label: 'Daewoo' },
   { value: 'daihatsu', label: 'Daihatsu' },
   { value: 'ds', label: 'DS Automobiles' },
   { value: 'eagle', label: 'Eagle' },
   { value: 'faraday_future', label: 'Faraday Future' },
   { value: 'geely', label: 'Geely' },
   { value: 'great_wall', label: 'Great Wall' },
+  { value: 'haval', label: 'Haval' },
   { value: 'holden', label: 'Holden' },
   { value: 'hongqi', label: 'Hongqi' },
+  { value: 'hummer', label: 'Hummer' },
   { value: 'jensen', label: 'Jensen' },
-  { value: 'jetta', label: 'Jetta' },
-  { value: 'koenigsegg', label: 'Koenigsegg' },
+  { value: 'karma', label: 'Karma' },
   { value: 'lagonda', label: 'Lagonda' },
+  { value: 'lancia', label: 'Lancia' },
   { value: 'maruti', label: 'Maruti' },
   { value: 'maxus', label: 'Maxus' },
   { value: 'mg', label: 'MG' },
   { value: 'morgan', label: 'Morgan' },
   { value: 'nio', label: 'NIO' },
   { value: 'oldsmobile', label: 'Oldsmobile' },
+  { value: 'opel', label: 'Opel' },
   { value: 'panoz', label: 'Panoz' },
   { value: 'perodua', label: 'Perodua' },
   { value: 'proton', label: 'Proton' },
@@ -120,9 +110,12 @@ const carOptions = [
   { value: 'rossion', label: 'Rossion' },
   { value: 'saic', label: 'SAIC' },
   { value: 'scania', label: 'Scania' },
+  { value: 'seat', label: 'SEAT' },
   { value: 'shelby', label: 'Shelby' },
+  { value: 'skoda', label: 'Škoda' },
   { value: 'spyker', label: 'Spyker' },
   { value: 'ssc', label: 'SSC North America' },
+  { value: 'ssangyong', label: 'SsangYong' },
   { value: 'tvr', label: 'TVR' },
   { value: 'uaz', label: 'UAZ' },
   { value: 'vauxhall', label: 'Vauxhall' },
@@ -135,6 +128,7 @@ const carOptions = [
   { value: 'zenvo', label: 'Zenvo' },
   { value: 'zotye', label: 'Zotye' },
 ];
+
 const yearOptions = Array.from({ length: 100 }, (_, i) => {
   const year = new Date().getFullYear() - i;
   return { value: year.toString(), label: year.toString() };
@@ -157,14 +151,7 @@ const Hero = () => {
     vehicleType: '',
   });
 
-  // Ensure the recaptcha key is set
-  const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-
   useEffect(() => {
-    if (!reCaptchaKey) {
-      console.error('ReCaptcha key is missing. Make sure to set NEXT_PUBLIC_RECAPTCHA_SITE_KEY in your environment.');
-    }
-
     let directionX = 1;
     let directionY = 1;
     let gradientPositionX = 0;
@@ -188,7 +175,7 @@ const Hero = () => {
     };
 
     animateGradient();
-  }, [reCaptchaKey]);
+  }, []);
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -220,7 +207,7 @@ const Hero = () => {
   };
 
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
       <HeroForm
         formData={formData}
         handleInputChange={handleInputChange}
@@ -228,12 +215,13 @@ const Hero = () => {
         handleYearChange={handleYearChange}
         handleVehicleTypeChange={handleVehicleTypeChange}
         gradientRef={gradientRef}
+        setFormData={setFormData}
       />
     </GoogleReCaptchaProvider>
   );
 };
 
-const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChange, handleVehicleTypeChange, gradientRef }) => {
+const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChange, handleVehicleTypeChange, gradientRef, setFormData }) => {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const handleFormSubmit = async (e) => {
@@ -252,7 +240,7 @@ const HeroForm = ({ formData, handleInputChange, handleCarChange, handleYearChan
         headers: {
           'Content-Type': 'application/json',
         },
-        mode: 'no-cors',
+        mode: 'no-cors', // This bypasses CORS checks but limits response handling
         body: JSON.stringify({ ...formData, token }),
       });
 

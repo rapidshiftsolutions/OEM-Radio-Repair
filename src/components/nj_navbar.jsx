@@ -40,7 +40,7 @@ export default function NewNavbar() {
                 width={120}
                 height={60}
                 alt="OEM Radio Repair Logo"
-                className="ml-4 h-6 md:h-12 w-auto"
+                className="ml-4 h-6 md:h-8 w-auto"
               />
             </a>
           </div>

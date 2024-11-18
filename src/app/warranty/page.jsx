@@ -29,8 +29,9 @@ export const metadata = {
     title: 'Warranty - OEM Radio Repair',
     description: 'OEM Radio Repair warranty coverage for factory radios, amplifiers, and touch screen repairs.',
   },
-  viewport: 'width=device-width, initial-scale=1',
 };
+
+export const viewport = 'width=device-width, initial-scale=1';
 
 export default function Warranty() {
   return (
@@ -47,9 +48,9 @@ export default function Warranty() {
               Last updated: November 15th, 2024
             </p>
             <section className="mb-10">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Limited Lifetime Warranty</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1-Year Limited Warranty</h2>
               <p className="text-base/7 text-gray-600">
-                OEM Radio Repair provides a Limited Lifetime Warranty on all factory radio, amplifier, and touch screen repair services. This warranty covers defects in materials and workmanship under normal use and conditions for as long as you own your vehicle. The Limited Lifetime Warranty is applicable to the original purchaser of our services and is non-transferable.
+                OEM Radio Repair provides a 1-Year Limited Warranty on all factory radio, amplifier, and touch screen repair services. This warranty covers defects in materials and workmanship under normal use and conditions for a period of one year from the date of repair. The 1-Year Limited Warranty is applicable to the original purchaser of our services and is non-transferable.
               </p>
               <p className="mt-4 text-base/7 text-gray-600">
                 This warranty includes repairs or replacement of defective components, at no cost to the customer, provided the defect is due to our repair services or materials. Please note that our warranty does not cover damage caused by accidents, acts of nature, improper use, or modifications performed by others.
@@ -58,7 +59,7 @@ export default function Warranty() {
             <section className="mb-10">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Warranty Exclusions</h2>
               <p className="text-base/7 text-gray-600">
-                Our Limited Lifetime Warranty does not cover damage resulting from the following:
+                Our 1-Year Limited Warranty does not cover damage resulting from the following:
               </p>
               <ul className="list-disc ml-8 mt-4 text-base/7 text-gray-600">
                 <li>Acts of nature, including but not limited to floods, earthquakes, and severe weather.</li>
@@ -86,7 +87,7 @@ export default function Warranty() {
                 To ensure your repaired components remain in optimal condition and that your warranty remains valid, it is essential to follow proper maintenance guidelines. This includes avoiding exposure to excessive moisture, preventing electrical overloads, and handling all components with care. Failure to properly maintain your audio system may void the warranty.
               </p>
               <p className="mt-4 text-base/7 text-gray-600">
-                OEM Radio Repair also offers routine maintenance services to help keep your vehicles audio system in top shape. Regular checkups will not only keep your system functioning properly but also extend its lifespan.
+                OEM Radio Repair also offers routine maintenance services to help keep your vehicle's audio system in top shape. Regular checkups will not only keep your system functioning properly but also extend its lifespan.
               </p>
             </section>
             <section className="mb-10">

@@ -128,13 +128,6 @@ export default function NewNavbar() {
               <PhoneIcon className="h-5 w-5" />
             </a>
             <a
-              href="/locations"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-700 text-white"
-              title="Locations"
-            >
-              <MapPinIcon className="h-5 w-5" />
-            </a>
-            <a
               href="/contact"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-700 text-white"
               title="Contact Form"

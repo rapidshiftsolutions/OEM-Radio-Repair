@@ -75,7 +75,7 @@ const carOptions = [
   { value: 'saturn', label: 'Saturn' },
   { value: 'scion', label: 'Scion' },
   { value: 'seat', label: 'SEAT' },
-  { value: 'skoda', label: 'Škoda' },
+  { value: 'skoda', label: 'Skoda' },
   { value: 'smart', label: 'Smart' },
   { value: 'ssangyong', label: 'SsangYong' },
   { value: 'subaru', label: 'Subaru' },
@@ -162,6 +162,7 @@ const Hero = () => {
     year: '',
     vehicleType: '',
   });
+  const [isFormValid, setIsFormValid] = useState(false);
 
   // Gradient animation effect
   useEffect(() => {
@@ -206,6 +207,12 @@ const Hero = () => {
     }));
   };
 
+  // Validate form fields
+  useEffect(() => {
+    const { name, email, phone, car, year, vehicleType } = formData;
+    setIsFormValid(name && email && phone && car && year && vehicleType);
+  }, [formData]);
+
   return (
     <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
       <HeroForm
@@ -216,6 +223,7 @@ const Hero = () => {
         handleVehicleTypeChange={handleSelectChange('vehicleType')}
         gradientRef={gradientRef}
         setFormData={setFormData}
+        isFormValid={isFormValid}
       />
     </GoogleReCaptchaProvider>
   );
@@ -229,6 +237,7 @@ const HeroForm = ({
   handleVehicleTypeChange,
   gradientRef,
   setFormData,
+  isFormValid,
 }) => {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [isRecaptchaReady, setIsRecaptchaReady] = useState(false);
@@ -422,7 +431,8 @@ const HeroForm = ({
             <div className="mt-10 flex justify-end border-t border-gray-900/10 pt-8">
               <button
                 type="submit"
-                className="rounded-md bg-primary-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                className={`rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 ${isFormValid ? 'bg-primary-500 hover:bg-primary-700' : 'bg-gray-400 cursor-not-allowed'}`}
+                disabled={!isFormValid}
               >
                 Submit Request
               </button>

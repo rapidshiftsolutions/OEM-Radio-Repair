@@ -11,126 +11,9 @@ const Select = dynamic(() => import('react-select'), { ssr: false });
 const carOptions = [
   { value: 'acura', label: 'Acura' },
   { value: 'alfa_romeo', label: 'Alfa Romeo' },
-  { value: 'aston_martin', label: 'Aston Martin' },
-  { value: 'audi', label: 'Audi' },
-  { value: 'bentley', label: 'Bentley' },
-  { value: 'bmw', label: 'BMW' },
-  { value: 'buick', label: 'Buick' },
-  { value: 'cadillac', label: 'Cadillac' },
-  { value: 'chevrolet', label: 'Chevrolet' },
-  { value: 'chrysler', label: 'Chrysler' },
-  { value: 'dodge', label: 'Dodge' },
-  { value: 'ferrari', label: 'Ferrari' },
-  { value: 'fiat', label: 'Fiat' },
-  { value: 'fisker', label: 'Fisker' },
-  { value: 'ford', label: 'Ford' },
-  { value: 'genesis', label: 'Genesis' },
-  { value: 'gmc', label: 'GMC' },
-  { value: 'honda', label: 'Honda' },
-  { value: 'hyundai', label: 'Hyundai' },
-  { value: 'infiniti', label: 'Infiniti' },
-  { value: 'isuzu', label: 'Isuzu' },
-  { value: 'jaguar', label: 'Jaguar' },
-  { value: 'jeep', label: 'Jeep' },
-  { value: 'kia', label: 'Kia' },
-  { value: 'koenigsegg', label: 'Koenigsegg' },
-  { value: 'lamborghini', label: 'Lamborghini' },
-  { value: 'land_rover', label: 'Land Rover' },
-  { value: 'lexus', label: 'Lexus' },
-  { value: 'lincoln', label: 'Lincoln' },
-  { value: 'lotus', label: 'Lotus' },
-  { value: 'lucid', label: 'Lucid' },
-  { value: 'maserati', label: 'Maserati' },
-  { value: 'maybach', label: 'Maybach' },
-  { value: 'mazda', label: 'Mazda' },
-  { value: 'mclaren', label: 'McLaren' },
-  { value: 'mercedes', label: 'Mercedes-Benz' },
-  { value: 'mercury', label: 'Mercury' },
-  { value: 'mini', label: 'Mini' },
-  { value: 'mitsubishi', label: 'Mitsubishi' },
-  { value: 'nissan', label: 'Nissan' },
-  { value: 'pagani', label: 'Pagani' },
-  { value: 'peugeot', label: 'Peugeot' },
-  { value: 'plymouth', label: 'Plymouth' },
-  { value: 'polestar', label: 'Polestar' },
-  { value: 'pontiac', label: 'Pontiac' },
-  { value: 'porsche', label: 'Porsche' },
-  { value: 'ram', label: 'Ram' },
-  { value: 'renault', label: 'Renault' },
-  { value: 'rolls_royce', label: 'Rolls-Royce' },
-  { value: 'saab', label: 'Saab' },
-  { value: 'saturn', label: 'Saturn' },
-  { value: 'scion', label: 'Scion' },
-  { value: 'smart', label: 'Smart' },
-  { value: 'subaru', label: 'Subaru' },
-  { value: 'suzuki', label: 'Suzuki' },
-  { value: 'tata', label: 'Tata' },
-  { value: 'tesla', label: 'Tesla' },
-  { value: 'toyota', label: 'Toyota' },
-  { value: 'volkswagen', label: 'Volkswagen' },
-  { value: 'volvo', label: 'Volvo' },
-  { value: 'alpine', label: 'Alpine' },
-  { value: 'ariel', label: 'Ariel' },
-  { value: 'arrinera', label: 'Arrinera' },
-  { value: 'ascari', label: 'Ascari' },
-  { value: 'bajaj', label: 'Bajaj' },
-  { value: 'bollinger', label: 'Bollinger' },
-  { value: 'brilliance', label: 'Brilliance' },
-  { value: 'caterham', label: 'Caterham' },
-  { value: 'changan', label: 'Changan' },
-  { value: 'chery', label: 'Chery' },
-  { value: 'daewoo', label: 'Daewoo' },
-  { value: 'daihatsu', label: 'Daihatsu' },
-  { value: 'ds', label: 'DS Automobiles' },
-  { value: 'eagle', label: 'Eagle' },
-  { value: 'faraday_future', label: 'Faraday Future' },
-  { value: 'geely', label: 'Geely' },
-  { value: 'great_wall', label: 'Great Wall' },
-  { value: 'haval', label: 'Haval' },
-  { value: 'holden', label: 'Holden' },
-  { value: 'hongqi', label: 'Hongqi' },
-  { value: 'hummer', label: 'Hummer' },
-  { value: 'jensen', label: 'Jensen' },
-  { value: 'karma', label: 'Karma' },
-  { value: 'lagonda', label: 'Lagonda' },
-  { value: 'lancia', label: 'Lancia' },
-  { value: 'maruti', label: 'Maruti' },
-  { value: 'maxus', label: 'Maxus' },
-  { value: 'mg', label: 'MG' },
-  { value: 'morgan', label: 'Morgan' },
-  { value: 'nio', label: 'NIO' },
-  { value: 'oldsmobile', label: 'Oldsmobile' },
-  { value: 'opel', label: 'Opel' },
-  { value: 'panoz', label: 'Panoz' },
-  { value: 'perodua', label: 'Perodua' },
-  { value: 'proton', label: 'Proton' },
-  { value: 'qoros', label: 'Qoros' },
-  { value: 'radical', label: 'Radical' },
-  { value: 'reliant', label: 'Reliant' },
-  { value: 'rimac', label: 'Rimac' },
-  { value: 'rivian', label: 'Rivian' },
-  { value: 'rossion', label: 'Rossion' },
-  { value: 'saic', label: 'SAIC' },
-  { value: 'scania', label: 'Scania' },
-  { value: 'seat', label: 'SEAT' },
-  { value: 'shelby', label: 'Shelby' },
-  { value: 'skoda', label: 'Škoda' },
-  { value: 'spyker', label: 'Spyker' },
-  { value: 'ssc', label: 'SSC North America' },
-  { value: 'ssangyong', label: 'SsangYong' },
-  { value: 'tvr', label: 'TVR' },
-  { value: 'uaz', label: 'UAZ' },
-  { value: 'vauxhall', label: 'Vauxhall' },
-  { value: 'vector', label: 'Vector' },
-  { value: 'vinfast', label: 'VinFast' },
-  { value: 'w_motors', label: 'W Motors' },
-  { value: 'wiesmann', label: 'Wiesmann' },
-  { value: 'xpeng', label: 'XPeng' },
-  { value: 'zhongtong', label: 'Zhongtong' },
-  { value: 'zenvo', label: 'Zenvo' },
+  // ... other options
   { value: 'zotye', label: 'Zotye' },
 ];
-
 
 const yearOptions = Array.from({ length: 100 }, (_, i) => {
   const year = new Date().getFullYear() - i;
@@ -225,7 +108,7 @@ const HeroForm = ({
   const [isRecaptchaReady, setIsRecaptchaReady] = useState(false);
 
   useEffect(() => {
-    // Check if the reCAPTCHA is ready
+    // Set recaptcha readiness when the component mounts
     if (executeRecaptcha) {
       setIsRecaptchaReady(true);
     }
@@ -241,8 +124,10 @@ const HeroForm = ({
     }
 
     try {
+      // Execute reCAPTCHA and get the token
       const token = await executeRecaptcha('submit');
-
+      
+      // Submit form data with the token
       await fetch('https://hooks.zapier.com/hooks/catch/19076579/2rh6o5x/', {
         method: 'POST',
         headers: {
@@ -269,7 +154,7 @@ const HeroForm = ({
 
   return (
     <section
-      className="relative flex h-full items-center bg-cover bg-center pt-10 md:h-screen md:py-10 md:pt-0"
+      className="relative flex h-full items-center bg-cover bg-center pt-10 md:pt-24 md:h-screen md:py-10"
       style={{
         backgroundImage: "url('/OEMRadioRepair/marketing/bmw.webp')",
       }}

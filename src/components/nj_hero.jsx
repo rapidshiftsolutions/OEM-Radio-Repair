@@ -1,14 +1,12 @@
-'use client'
 
-import dynamic from 'next/dynamic'
-import { useEffect, useRef, useState } from 'react'
-import {
-  GoogleReCaptchaProvider,
-  useGoogleReCaptcha,
-} from 'react-google-recaptcha-v3'
 
-// Dynamic import for SSR compatibility
-const Select = dynamic(() => import('react-select'), { ssr: false })
+'use client';
+
+import { useState } from 'react';
+import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import Select from 'react-select';
+
+// Dropdown options
 
 // Car, year, and vehicle type options
 const carOptions = [
@@ -145,352 +143,222 @@ const carOptions = [
 ]
 
 const yearOptions = Array.from({ length: 100 }, (_, i) => {
-  const year = new Date().getFullYear() - i
-  return { value: year.toString(), label: year.toString() }
-})
+  const year = new Date().getFullYear() - i;
+  return { value: year.toString(), label: year.toString() };
+});
 
-const vehicleTypeOptions = [
-  { value: 'car', label: 'Car' },
-  { value: 'truck', label: 'Truck' },
-  { value: 'suv', label: 'SUV' },
-]
-
-const Hero = () => {
-  const gradientRef = useRef(null)
+export default function OEMContactHero() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     car: '',
     year: '',
-    vehicleType: '',
-  })
-  const [isFormValid, setIsFormValid] = useState(false)
+    attachment: null,
+    comments: '',
+  });
 
-  // Gradient animation effect
-  useEffect(() => {
-    let directionX = 1
-    let directionY = 1
-    let gradientPositionX = 0
-    let gradientPositionY = 0
+  const [loading, setLoading] = useState(false);
 
-    const animateGradient = () => {
-      gradientPositionX += directionX * 0.2
-      gradientPositionY += directionY * 0.2
-
-      if (gradientPositionX >= 100 || gradientPositionX <= 0) {
-        directionX *= -1
-      }
-      if (gradientPositionY >= 100 || gradientPositionY <= 0) {
-        directionY *= -1
-      }
-
-      if (gradientRef.current) {
-        gradientRef.current.style.backgroundPosition = `${gradientPositionX}% ${gradientPositionY}%`
-      }
-      requestAnimationFrame(animateGradient)
-    }
-
-    animateGradient()
-  }, [])
-
-  // Handling form input changes
   const handleInputChange = (e) => {
-    const { id, value } = e.target
+    const { id, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [id]: value,
-    }))
-  }
+    }));
+  };
+
+  const handleFileChange = (e) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      attachment: e.target.files[0],
+    }));
+  };
 
   const handleSelectChange = (field) => (selectedOption) => {
     setFormData((prevData) => ({
       ...prevData,
       [field]: selectedOption?.value || '',
-    }))
-  }
+    }));
+  };
 
-  // Validate form fields
-  useEffect(() => {
-    const { name, email, phone, car, year, vehicleType } = formData
-    setIsFormValid(name && email && phone && car && year && vehicleType)
-  }, [formData])
-
-  return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-    >
-      <HeroForm
-        formData={formData}
-        handleInputChange={handleInputChange}
-        handleCarChange={handleSelectChange('car')}
-        handleYearChange={handleSelectChange('year')}
-        handleVehicleTypeChange={handleSelectChange('vehicleType')}
-        gradientRef={gradientRef}
-        setFormData={setFormData}
-        isFormValid={isFormValid}
-      />
-    </GoogleReCaptchaProvider>
-  )
-}
-
-const HeroForm = ({
-  formData,
-  handleInputChange,
-  handleCarChange,
-  handleYearChange,
-  handleVehicleTypeChange,
-  gradientRef,
-  setFormData,
-  isFormValid,
-}) => {
-  const { executeRecaptcha } = useGoogleReCaptcha()
-  const [isRecaptchaReady, setIsRecaptchaReady] = useState(false)
-
-  useEffect(() => {
-    // Set recaptcha readiness when the component mounts
-    if (executeRecaptcha) {
-      setIsRecaptchaReady(true)
-    }
-  }, [executeRecaptcha])
-
-  // Handle form submission with Google reCAPTCHA
   const handleFormSubmit = async (e) => {
-    e.preventDefault()
-
-    if (!isRecaptchaReady) {
-      alert('reCAPTCHA is not ready yet. Please try again shortly.')
-      return
-    }
+    e.preventDefault();
+    setLoading(true);
 
     try {
-      // Execute reCAPTCHA and get the token
-      const token = await executeRecaptcha('submit')
+      const formDataToSend = new FormData();
+      Object.keys(formData).forEach((key) => {
+        formDataToSend.append(key, formData[key]);
+      });
 
-      // Submit form data with the token
-      await fetch('https://hooks.zapier.com/hooks/catch/19076579/2rh6o5x/', {
+      const response = await fetch('https://hooks.zapier.com/hooks/catch/19076579/2rh6o5x/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'no-cors',
-        body: JSON.stringify({ ...formData, token }),
-      })
+        body: formDataToSend,
+      });
 
-      alert('Thank you for contacting us! We will get back to you shortly.')
+      if (!response.ok) {
+        throw new Error('Failed to submit the form');
+      }
+
+      alert('Thank you for contacting us! We will get back to you shortly.');
       setFormData({
         name: '',
         email: '',
         phone: '',
         car: '',
         year: '',
-        vehicleType: '',
-      })
+        attachment: null,
+        comments: '',
+      });
     } catch (error) {
-      console.error('Form submission failed', error)
-      alert('There was an issue submitting the form. Please try again later.')
+      console.error('Form submission error:', error);
+      alert('An error occurred while submitting the form. Please try again later.');
+    } finally {
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    <section
-      className="relative flex h-full items-center bg-cover bg-no-repeat pt-10 md:h-screen md:py-10 md:pt-20"
-      style={{
-        backgroundImage: "url('/OEMRadioRepair/marketing/bmw.webp')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div className="absolute inset-0 bg-black md:opacity-40"></div>
-      <div
-        ref={gradientRef}
-        className="absolute inset-0 bg-gradient-to-br from-light-900 via-primary-900 to-transparent opacity-100 md:opacity-80"
-        style={{ backgroundSize: '200% 200%' }}
-      ></div>
+    <div className="relative isolate bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-24 sm:py-32">
+      {/* Background Texture */}
+      <div className="absolute inset-0 bg-[url('/texture.webp')] bg-cover bg-fixed opacity-10 animate-slow-scroll" />
 
-      <div className="relative z-10 flex w-full flex-col md:flex-row">
-        <div className="w-full max-w-lg px-6 text-left md:mr-16 md:w-2/3 md:max-w-4xl md:pl-16">
-          <h1 className="mb-4 text-3xl text-white md:text-6xl">
-            <b className="font-bold text-primary-100">OEM Radio Repairs</b>
-            <br />{' '}
-            <span className="font-sm text-3xl md:text-5xl">
-              for Factory Radios
-              <br /> and Amplifiers.
-            </span>
-          </h1>
-          <p className="pb-6 text-lg text-light-100 md:mb-12 md:pb-0 md:text-xl">
-            OEM Radio Repair offers expert solutions for factory radios, touch
-            screens, and amplifiers. Fast, reliable, and quality service you can
-            trust.
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-16 px-6 lg:px-12">
+        {/* Contact Info Section */}
+        <div className="relative lg:flex lg:flex-col lg:justify-center pb-16 lg:pb-0">
+          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-7xl">
+            OEM Radio Repair <br></br> <span className="text-primary-400">Expert Solutions</span>.
+          </h2>
+          <p className="mt-6 text-lg text-gray-300">
+            Let us repair your factory radios, amplifiers, and touch screens. Reach out today for fast, reliable service you can trust.
           </p>
-          <h2 className="mb-4 hidden text-2xl text-white md:block">
-            Why Choose OEM Radio Repair?
-          </h2>
-          <ul className="hidden list-disc pl-6 text-lg text-light-100 md:block">
-            <li className="mb-2">
-              Specialists in OEM radio, amplifier, and touch screen repair.
-            </li>
-            <li className="mb-2">
-              Certified technicians with years of experience.
-            </li>
-            <li className="mb-2">
-              High-quality parts and guaranteed workmanship.
-            </li>
-            <li className="mb-2">
-              Quick turnaround times for minimal downtime.
-            </li>
-            <li>Customer satisfaction is our top priority.</li>
-          </ul>
-          <div className="-mb-24 mt-10 flex md:-mb-0">
-            <a
-              href="/locations"
-              className="rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
-            >
-              Locations <span aria-hidden="true">&rarr;</span>
-            </a>
+          <dl className="mt-10 space-y-6 text-base text-gray-300">
+            <div className="flex items-start gap-x-4">
+              <dt className="flex-none">
+                <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-primary-200" />
+              </dt>
+              <dd>Birmingham, AL</dd>
+            </div>
+            <div className="flex items-start gap-x-4">
+              <dt className="flex-none">
+                <PhoneIcon aria-hidden="true" className="h-7 w-6 text-primary-200" />
+              </dt>
+              <dd>
+                <a href="tel:+1 205-522-1162" className="hover:text-primary-400">
+                  +1 (205) 522-1162
+                </a>
+              </dd>
+            </div>
+            <div className="flex items-start gap-x-4">
+              <dt className="flex-none">
+                <EnvelopeIcon aria-hidden="true" className="h-7 w-6 text-primary-200" />
+              </dt>
+              <dd>
+                <a href="mailto:info@oemradiorepair.com" className="hover:text-primary-400">
+                  info@oemradiorepair.com
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/* Form Section */}
+        <form
+          onSubmit={handleFormSubmit}
+          className="relative bg-light-100 shadow-lg rounded-lg px-6 py-8 sm:p-16 lg:p-20 w-full"
+        >
+          <h3 className="text-xl font-semibold tracking-tight text-gray-900 mb-6 sm:mb-8">
+            Fill out the form and we’ll handle the rest.
+          </h3>
+          <div className="grid grid-cols-1 gap-4">
+            {/* Input Fields */}
+            {[
+              { id: 'name', label: 'Your Name', type: 'text', required: true },
+              { id: 'email', label: 'Email Address', type: 'email', required: true },
+              { id: 'phone', label: 'Phone Number', type: 'tel', required: true },
+            ].map((field) => (
+              <div key={field.id}>
+                <label htmlFor={field.id} className="block text-sm font-semibold text-gray-900">
+                  {field.label}
+                </label>
+                <input
+                  id={field.id}
+                  name={field.id}
+                  type={field.type}
+                  value={formData[field.id]}
+                  onChange={handleInputChange}
+                  required={field.required}
+                  className="mt-2 block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-gray-600 focus:ring-primary-500 sm:text-sm"
+                />
+              </div>
+            ))}
+            <div>
+              <label htmlFor="car" className="block text-sm font-semibold text-gray-900">
+                Vehicle Brand
+              </label>
+              <Select
+                id="car"
+                options={carOptions}
+                value={carOptions.find((option) => option.value === formData.car)}
+                onChange={handleSelectChange('car')}
+                placeholder="Select brand"
+                className="mt-2"
+              />
+            </div>
+            <div>
+              <label htmlFor="year" className="block text-sm font-semibold text-gray-900">
+                Vehicle Year
+              </label>
+              <Select
+                id="year"
+                options={yearOptions}
+                value={yearOptions.find((option) => option.value === formData.year)}
+                onChange={handleSelectChange('year')}
+                placeholder="Select year"
+                className="mt-2"
+              />
+            </div>
+            <div>
+              <label htmlFor="attachment" className="block text-sm font-semibold text-gray-900">
+                Attach Image of Radio
+              </label>
+              <input
+                type="file"
+                id="attachment"
+                onChange={handleFileChange}
+                className="mt-2 w-full"
+              />
+            </div>
+            <div>
+              <label htmlFor="comments" className="block text-sm font-semibold text-gray-900">
+                Comments
+              </label>
+              <textarea
+                id="comments"
+                rows={4}
+                value={formData.comments}
+                onChange={handleInputChange}
+                className="mt-2 block w-full rounded-md border-0 px-4 py-3 text-gray-900 shadow-sm ring-1 ring-gray-600 focus:ring-primary-500 sm:text-sm"
+                placeholder="Describe your issue here..."
+              ></textarea>
+            </div>
           </div>
-        </div>
-
-        <div className="mt-10 w-full bg-white p-8 shadow-lg md:mx-8 md:my-10 md:ml-10 md:mr-16 md:mt-0 md:w-1/3 md:self-start md:rounded-lg">
-          <h2 className="mb-6 text-lg font-semibold text-primary-900 md:text-2xl">
-            Request a Free Consultation Today!
-          </h2>
-          <form onSubmit={handleFormSubmit} className="space-y-6">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-semibold text-gray-900"
-              >
-                Name
-              </label>
-              <div className="mt-2.5">
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="E.g., John Doe"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm"
-                />
-              </div>
-            </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-semibold text-gray-900"
-              >
-                Email
-              </label>
-              <div className="mt-2.5">
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="E.g., john.doe@example.com"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm"
-                />
-              </div>
-            </div>
-            <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-semibold text-gray-900"
-              >
-                Phone
-              </label>
-              <div className="mt-2.5">
-                <input
-                  type="tel"
-                  id="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  placeholder="E.g., (123) 456-7890"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm"
-                />
-              </div>
-            </div>
-            <div className="flex space-x-4">
-              <div className="w-1/2">
-                <label
-                  htmlFor="car"
-                  className="block text-sm font-semibold text-gray-900"
-                >
-                  Vehicle Brand
-                </label>
-                <div className="mt-2.5">
-                  <Select
-                    id="car"
-                    options={carOptions}
-                    value={carOptions.find(
-                      (option) => option.value === formData.car,
-                    )}
-                    onChange={handleCarChange}
-                    placeholder="Brand"
-                    className="react-select-container"
-                    classNamePrefix="react-select"
-                  />
-                </div>
-              </div>
-              <div className="w-1/2">
-                <label
-                  htmlFor="vehicleType"
-                  className="block text-sm font-semibold text-gray-900"
-                >
-                  Vehicle Type
-                </label>
-                <div className="mt-2.5">
-                  <Select
-                    id="vehicleType"
-                    options={vehicleTypeOptions}
-                    value={vehicleTypeOptions.find(
-                      (option) => option.value === formData.vehicleType,
-                    )}
-                    onChange={handleVehicleTypeChange}
-                    placeholder="Type"
-                    className="react-select-container"
-                    classNamePrefix="react-select"
-                  />
-                </div>
-              </div>
-            </div>
-            <div>
-              <label
-                htmlFor="year"
-                className="block text-sm font-semibold text-gray-900"
-              >
-                Year
-              </label>
-              <div className="mt-2.5">
-                <Select
-                  id="year"
-                  options={yearOptions}
-                  value={yearOptions.find(
-                    (option) => option.value === formData.year,
-                  )}
-                  onChange={handleYearChange}
-                  placeholder="Select year"
-                  className="react-select-container"
-                  classNamePrefix="react-select"
-                />
-              </div>
-            </div>
-            <div className="mt-10 flex justify-end border-t border-gray-900/10 pt-8">
-              <button
-                type="submit"
-                className={`rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 ${isFormValid ? 'bg-primary-500 hover:bg-primary-700' : 'cursor-not-allowed bg-gray-400'}`}
-                disabled={!isFormValid}
-              >
-                Submit Request
-              </button>
-            </div>
-          </form>
-        </div>
+          <div className="mt-8">
+            <button
+              type="submit"
+              disabled={loading}
+              className={`w-full rounded-md px-6 py-3 text-lg font-semibold text-white shadow-md ${
+                loading
+                  ? 'bg-gray-600 cursor-not-allowed'
+                  : 'bg-primary-500 hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500'
+              }`}
+            >
+              {loading ? 'Submitting...' : 'Submit Request'}
+            </button>
+          </div>
+        </form>
       </div>
-    </section>
-  )
+    </div>
+  );
 }
-
-export default Hero

@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
-import cities from '@/data/cities';
+import React, { useState } from "react";
+import cities from "@/data/cities";
 
 const SearchComponent = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [filteredCities, setFilteredCities] = useState([]);
   const [notFound, setNotFound] = useState(false);
 
@@ -38,7 +38,7 @@ const SearchComponent = () => {
               placeholder="Enter your city name..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 px-4 py-3 rounded-l-md border border-white-300 focus:ring-primary-500 focus:border-primary-500 text-white-800"
+              className="flex-1 px-4 py-3 rounded-l-md border border-gray-300 focus:ring-primary-500 focus:border-primary-500 text-gray-800"
             />
             <button
               onClick={handleSearch}
@@ -61,7 +61,9 @@ const SearchComponent = () => {
                   className="p-4 bg-white shadow rounded-lg hover:shadow-md transition-shadow"
                 >
                   <a
-                    href={`/locations/cities/${city.name.toLowerCase().replace(/ /g, '-')}-${city.state.toLowerCase()}`}
+                    href={`/locations/cities/${city.name
+                      .toLowerCase()
+                      .replace(/ /g, "-")}-${city.state.toLowerCase()}`}
                     className="text-primary-500 text-lg font-medium hover:underline"
                   >
                     {city.name}, {city.state}
@@ -77,11 +79,20 @@ const SearchComponent = () => {
             <p className="text-red-500 text-lg">
               No results found for &quot;{searchQuery}&quot;.
             </p>
-            <p className="text-white-600 mt-2">
+            <p className="text-primary-50 mt-2">
               If your city isn&apos;t listed, don&apos;t worry! We offer mail-in repair services to every city in Alabama.
             </p>
           </div>
         )}
+
+        <div className="mt-12 text-center">
+          <a
+            href="/locations/list"
+            className="text-white underline text-sm hover:text-primary-300"
+          >
+            View the full list of locations
+          </a>
+        </div>
       </div>
     </section>
   );

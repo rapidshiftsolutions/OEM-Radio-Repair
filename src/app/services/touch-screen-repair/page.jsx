@@ -73,7 +73,7 @@ export default function HeadUnitRepair() {
               <section className="mb-10">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Common Problems We Fix</h2>
                 <p className="text-lg leading-7 text-gray-600">
-                  Searching for &quot;mobile car touch screen repair Birmingham AL&quot;? We specialize in fixing a wide range of issues affecting car and truck head units and touch screens, including:
+                  Searching for &quot;car or truck touch screen repair in Birmingham AL&quot;? We specialize in fixing a wide range of issues affecting head units and touch screens, including:
                 </p>
                 <ul className="list-disc ml-8 mt-4 text-lg text-gray-600">
                   <li>Unresponsive or frozen touch screens</li>
@@ -102,7 +102,7 @@ export default function HeadUnitRepair() {
                   <li>Convenient scheduling options to fit your busy lifestyle</li>
                 </ul>
                 <p className="mt-4 text-lg text-gray-600">
-                  Whether you’re searching for &quot;car head unit repair near me&quot; or &quot;head unit replacement Birmingham AL,&quot; we are dedicated to restoring your system to like-new condition.
+                  Whether you’re searching for &quot;head unit repair or replacement, we are dedicated to restoring your system to like-new condition.
                 </p>
               </section>
 

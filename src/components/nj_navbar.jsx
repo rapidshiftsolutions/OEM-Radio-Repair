@@ -14,8 +14,9 @@ const navigation = {
     { name: 'Contact Us', href: '/contact' },
   ],
   services: [
+    { name: 'Speaker Repair', href: '/services/speaker-repair' },
     { name: 'Amplifier Repair', href: '/services/amplifier-repair' },
-    { name: 'Factory Touch Screen Repair', href: '/services/touch-screen-repair' },
+    { name: 'Touch Screen Repair', href: '/services/touch-screen-repair' },
     { name: 'Contact Us', href: '/contact' },
   ],
   legal: [

@@ -32,7 +32,7 @@ export default function NewNavbar() {
 
   return (
     <>
-      <div className="relative z-50 bg-primary-600 py-6 shadow">
+      <div className="relative z-50 bg-primary-800 py-6 shadow">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center">
             <a href="/">

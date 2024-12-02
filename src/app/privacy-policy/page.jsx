@@ -1,135 +1,141 @@
 import Footer from '@/components/nj_footer';
-import Hero from '@/components/nj_hero';
-import Intro from '@/components/nj_intro';
 import Navbar from '@/components/nj_navbar';
 import QuickNav from '@/components/nj_quicknav';
-import RapidShift from '@/components/nj_rapidshift';
 
-export default function Home() {
+export const metadata = {
+  title: 'Privacy Policy - OEM Radio Repair',
+  description:
+    'Learn about the privacy practices of OEM Radio Repair, including how we collect, use, and protect your personal information.',
+  keywords: [
+    'privacy policy',
+    'OEM Radio Repair privacy',
+    'data protection policy',
+    'personal information use',
+    'customer data privacy',
+    'data security',
+    'information collection',
+  ],
+  author: 'OEM Radio Repair',
+  openGraph: {
+    title: 'Privacy Policy - OEM Radio Repair',
+    description:
+      'OEM Radio Repair values your privacy. Read our detailed privacy policy to learn how we handle and protect your information.',
+    url: 'https://www.oemradiorepair.com/privacy-policy',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy - OEM Radio Repair',
+    description: 'Understand how OEM Radio Repair collects, uses, and protects your personal information.',
+  },
+};
+
+export const viewport = 'width=device-width, initial-scale=1';
+
+export default function PrivacyPolicy() {
   return (
-    <div className="">
+    <div className="bg-white text-gray-800">
       <Navbar />
       <QuickNav />
-      <main>
-      <div className="privacy-policy-container bg-light-50 text-gray-900 py-16 px-8">
-      <div className="mx-auto max-w-7xl">
-        <h1 className="text-4xl font-bold mb-8 text-primary-900">Privacy Policy for OEM Radio Repair</h1>
-        <p className="mb-8 text-lg">
-          <strong>Effective Date:</strong> November 15, 2024
-        </p>
-        <p className="mb-8 text-lg">
-          <strong>OEM Radio Repair</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to
-          protecting your personal information. This Privacy Policy describes how we collect, use, disclose, and
-          safeguard your information when you visit our website, use our services, or interact with us in other ways.
-          Please read this Privacy Policy carefully. By using our website or services, you agree to the practices
-          outlined in this policy.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4">1. Information We Collect</h2>
-        <h3 className="text-xl font-semibold mb-2">A. Information You Provide to Us</h3>
-        <p className="mb-4">
-          We collect information you provide directly to us when you:
-        </p>
-        <ul className="list-disc ml-8 mb-8">
-          <li>Fill out forms on our website, such as when you request a quote or contact us.</li>
-          <li>Sign up for our newsletter or marketing communications.</li>
-          <li>Interact with us through emails, phone calls, or in-person consultations.</li>
-          <li>Apply for a job or express interest in career opportunities.</li>
-        </ul>
-        <p className="mb-8">
-          The types of information we may collect include:
-        </p>
-        <ul className="list-disc ml-8 mb-8">
-          <li><strong>Personal Identification Information:</strong> Name, email address, phone number, mailing address, and other contact details.</li>
-          <li><strong>Business Information:</strong> Company name, job title, and other details related to your business needs.</li>
-          <li><strong>Payment Information:</strong> Billing address and payment card details (when applicable).</li>
-        </ul>
-
-        <h3 className="text-xl font-semibold mb-2">B. Information We Collect Automatically</h3>
-        <p className="mb-8">
-          When you visit our website, we automatically collect certain information about your device and browsing activity, including:
-        </p>
-        <ul className="list-disc ml-8 mb-8">
-          <li><strong>Log Data:</strong> IP address, browser type, operating system, pages visited, time spent on pages, and referring URLs.</li>
-          <li><strong>Cookies and Similar Technologies:</strong> We use cookies, web beacons, and similar technologies to collect information about your browsing behavior and preferences. You can control cookie preferences through your browser settings.</li>
-        </ul>
-
-        <h3 className="text-xl font-semibold mb-2">C. Information from Third Parties</h3>
-        <p className="mb-8">
-          We may receive information about you from third-party services, including social media platforms (when you interact with our social media accounts), marketing partners, and other publicly available sources.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4">2. How We Use Your Information</h2>
-        <ul className="list-disc ml-8 mb-8">
-          <li><strong>Provide and Manage Services:</strong> To deliver our services, including scheduling consultations, providing quotes, and managing ongoing projects.</li>
-          <li><strong>Communicate with You:</strong> To respond to inquiries, provide customer support, send updates, and market our products and services.</li>
-          <li><strong>Improve User Experience:</strong> To analyze website usage, improve content, and enhance our services based on your preferences and feedback.</li>
-          <li><strong>Manage Payment Processing:</strong> To facilitate transactions related to our services.</li>
-          <li><strong>Ensure Safety and Compliance:</strong> To detect and prevent fraud, maintain security, and comply with legal obligations.</li>
-        </ul>
-
-        <h2 className="text-2xl font-semibold mb-4">3. Sharing Your Information</h2>
-        <p className="mb-8">
-          We do not sell your personal information. However, we may share your information under the following circumstances:
-        </p>
-        <ul className="list-disc ml-8 mb-8">
-          <li><strong>Service Providers:</strong> We work with trusted service providers who assist us in delivering services (e.g., payment processors, marketing services).</li>
-          <li><strong>Business Transfers:</strong> If we are involved in a merger, acquisition, or sale of all or part of our assets, your information may be transferred as part of that transaction.</li>
-          <li><strong>Legal Requirements:</strong> We may disclose your information if required by law, court order, or governmental regulations.</li>
-          <li><strong>Protection of Rights:</strong> We may share your information when we believe it is necessary to protect the rights, property, or safety of OEM Radio Repair, our employees, or customers.</li>
-        </ul>
-
-        <h2 className="text-2xl font-semibold mb-4">4. Your Rights and Choices</h2>
-        <ul className="list-disc ml-8 mb-8">
-          <li><strong>Access and Correction:</strong> You can request access to or correction of your personal information.</li>
-          <li><strong>Opt-Out of Marketing Communications:</strong> You may opt out of receiving marketing emails by following the unsubscribe instructions in the email.</li>
-          <li><strong>Cookie Preferences:</strong> You can control the use of cookies through your browser settings.</li>
-        </ul>
-        <p className="mb-8">
-          To exercise these rights, please contact us at <a href="mailto:privacy@oemradiorepair.com" className="text-primary-500 underline">privacy@oemradiorepair.com</a>.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4">5. Data Security</h2>
-        <p className="mb-8">
-          We implement appropriate technical and organizational measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction. However, please note that no security measures are entirely foolproof, and we cannot guarantee absolute security.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4">6. Data Retention</h2>
-        <p className="mb-8">
-          We retain your personal information for as long as necessary to fulfill the purposes for which it was collected or as required by applicable laws. When your information is no longer needed, we will securely delete or anonymize it.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4">7. Children&apos;s Privacy</h2>
-        <p className="mb-8">
-          Our services are not directed to children under the age of 13. We do not knowingly collect personal information from children. If we become aware that we have collected information from a child under 13, we will take steps to delete it promptly.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4">8. Changes to This Privacy Policy</h2>
-        <p className="mb-8">
-          We may update this Privacy Policy from time to time to reflect changes in our practices or legal obligations. We will notify you of any significant changes by posting the updated policy on our website and updating the effective date.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4">9. Contact Us</h2>
-        <p className="mb-8">
-          If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us at:
-        </p>
-        <p className="mb-4">
-          <strong>OEM Radio Repair</strong><br />
-          2413 1st Ave S, Birmingham, AL 35233<br />
-          <strong>Email:</strong> <a href="mailto:privacy@oemradiorepair.com" className="text-primary-500 underline">privacy@oemradiorepair.com</a><br />
-          <strong>Phone:</strong> <a href="tel:+12055221162" className="text-primary-500 underline">+1 (205) 522-1162</a>
-        </p>
-        <p>
-          We value your trust in us and are committed to safeguarding your personal information.
-        </p>
-      </div>
-    </div>
-        
-        <Intro />
-        <Hero />
+      <main className="overflow-hidden py-24 sm:py-32">
+        <div className="mx-auto max-w-3xl px-6 lg:max-w-5xl lg:px-8">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl mb-10">
+              Privacy Policy
+            </h1>
+            <p className="text-base leading-7 text-gray-700 mb-8">
+              Last updated: November 15, 2024
+            </p>
+            {/* Section 1: Information We Collect */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Information We Collect</h2>
+              <p className="text-base text-gray-600">
+                OEM Radio Repair collects the following types of information to provide and improve our services:
+              </p>
+              <ul className="list-disc ml-8 mt-4 text-base text-gray-600">
+                <li>Personal Information: Name, email address, phone number, shipping address, and payment details.</li>
+                <li>Device Information: IP address, browser type, and operating system.</li>
+                <li>Service Details: Information about your vehicle&apos;s audio system and repair history.</li>
+                <li>Communication Records: Emails, phone calls, and other correspondence with our team.</li>
+              </ul>
+            </section>
+            {/* Section 2: How We Use Your Information */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. How We Use Your Information</h2>
+              <p className="text-base text-gray-600">
+                OEM Radio Repair uses the information collected for the following purposes:
+              </p>
+              <ul className="list-disc ml-8 mt-4 text-base text-gray-600">
+                <li>To process and fulfill repair orders.</li>
+                <li>To communicate updates regarding your service status.</li>
+                <li>To improve our website, products, and services based on customer feedback.</li>
+                <li>To process payments securely and efficiently.</li>
+                <li>To comply with legal requirements and prevent fraudulent activities.</li>
+              </ul>
+            </section>
+            {/* Section 3: Information Sharing and Disclosure */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Information Sharing and Disclosure</h2>
+              <p className="text-base text-gray-600">
+                We do not sell or rent your personal information. However, we may share your information in the following circumstances:
+              </p>
+              <ul className="list-disc ml-8 mt-4 text-base text-gray-600">
+                <li>With trusted service providers who assist in processing payments, shipping, or customer support.</li>
+                <li>When required by law, such as responding to subpoenas or legal processes.</li>
+                <li>To protect the rights, property, or safety of OEM Radio Repair, our customers, or others.</li>
+              </ul>
+            </section>
+            {/* Section 4: Data Security */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Data Security</h2>
+              <p className="text-base text-gray-600">
+                We implement robust security measures to protect your personal information, including encryption, secure servers, and regular security audits. Despite our best efforts, no method of data transmission or storage is entirely secure, and we cannot guarantee absolute security.
+              </p>
+            </section>
+            {/* Section 5: Your Rights */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Your Rights</h2>
+              <p className="text-base text-gray-600">
+                As a customer, you have the following rights regarding your personal information:
+              </p>
+              <ul className="list-disc ml-8 mt-4 text-base text-gray-600">
+                <li>Access: Request a copy of the personal data we have about you.</li>
+                <li>Correction: Update or correct inaccuracies in your information.</li>
+                <li>Deletion: Request the deletion of your personal information, subject to legal obligations.</li>
+                <li>Opt-Out: Unsubscribe from promotional communications at any time.</li>
+              </ul>
+            </section>
+            {/* Section 6: Cookies and Tracking */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Cookies and Tracking</h2>
+              <p className="text-base text-gray-600">
+                Our website uses cookies and similar tracking technologies to enhance your browsing experience. Cookies help us analyze website traffic, remember user preferences, and improve functionality. You can manage cookie preferences through your browser settings.
+              </p>
+            </section>
+            {/* Section 7: Changes to This Privacy Policy */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Changes to This Privacy Policy</h2>
+              <p className="text-base text-gray-600">
+                OEM Radio Repair reserves the right to update this Privacy Policy at any time. Changes will be effective immediately upon posting to this page. We encourage you to review this policy periodically for updates.
+              </p>
+            </section>
+            {/* Section 8: Contact Information */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Contact Information</h2>
+              <p className="text-base text-gray-600">
+                If you have any questions or concerns about this Privacy Policy or how your information is handled, please contact us at:
+              </p>
+              <address className="text-base text-gray-600 not-italic">
+                OEM Radio Repair<br />
+                2413 1st Ave S, Birmingham, AL 35233<br />
+                Email: info@oemradiorepair.com<br />
+                Phone: +1 (205) 522-1162
+              </address>
+            </section>
+          </div>
+        </div>
       </main>
       <Footer />
-      <RapidShift />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Navbar from '@/components/nj_navbar';
 import QuickNav from '@/components/nj_quicknav';
 import RapidShift from '@/components/nj_rapidshift';
 import Info from '@/components/nj_intro';
+import Locations from '@/components/nj_locations';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main>
         <Hero />
         <Info />
+        <Locations />
       </main>
       <Footer />
       <RapidShift />

@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
           title="The OEM Radio Repair  Blog"
           href="/blog/feed.xml"
         />
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="tgAseXOCr25EjtPoO0MNSw" async></script>
       </head>
       <body className="text-gray-950 antialiased">{children}</body>
     </html>
